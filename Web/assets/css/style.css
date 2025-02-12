@@ -92,10 +92,28 @@
    padding: 0;
    font-family: var(--body-font-family);
  }
+
+ ul,li{
+   list-style: none;
+ }
+
+ a{
+   color: var(--color-04);
+   text-decoration: none;
+   cursor: pointer;
+ }
  /* =========================================
     Base Styles
  ========================================= */
- 
+ html{
+   scroll-behavior: smooth;
+ }
+
+ body{
+   color: var(--color-04);
+   background-color: var(--body-color);
+   transition: .3s;
+ }
  /* =========================================
     Reusable Styles
  ========================================= */
