@@ -266,7 +266,7 @@
    border-bottom: 1px solid hsl( var(--hue) 45% 98% / .1);
    border-left: 1px solid hsl( var(--hue) 45% 98% / .1);
    border-radius: 50px;
-   display: none;
+   /*display: none;*/
  }
 
  .bottom-nav .menu li a{
@@ -361,10 +361,52 @@
    row-gap: 5px;
    translate: -50% 0;
    left: 50%;
-   bottom: 50px;
-   border-radius: 5px;
+   /*bottom: 50px;*/
+   border-radius: -75px;
+   opacity: 0;
    cursor: pointer;
    overflow: hidden;
+   animation: wiggle 2s linear infinite;
+   animation-delay: 1s;
+ }
+
+ @keyframes wiggle {
+  0%,
+  5%{
+    transform: rotateZ(0);
+  }
+  15%{
+    transform: rotateZ(-15deg);
+  }
+  20%{
+    transform: rotateZ(10deg);
+  }
+  25%{
+    transform: rotateZ(-10deg);
+  }
+  30%{
+    transform: rotateZ(6deg);
+  }
+  35%{
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100%{
+    transform: rotateZ(0deg);
+  }
+ }
+
+ .menu-show-btn .bar-01,
+ .menu-show-btn .bar-02{
+  background: var(--primary-color);
+  width: 40px;
+  height: 4px;
+  transition: .15s;
+ }
+
+ .menu-show-btn:hover .bar-01,
+ .menu-show-btn:hover .bar-02{
+  background: var(--hover-color);
  }
  /* =========================================
     Home
