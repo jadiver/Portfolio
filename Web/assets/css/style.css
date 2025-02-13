@@ -32,7 +32,7 @@
     --color-05: hsl( var(--hue) 26% 12%); /* dark to primary */
  
     --body-color: hsl( 250 26% 12%); /* dark to white */
-    --hover-color: hsl( var(--hue) var(--sat) calc(var(--light) -7%));
+    --hover-color: hsl( var(--hue) var(--sat) calc(var(--light) - 9.5%));
  
     /* ======= Background colors ======= */
     --bottom-nav-bg: hsl( var(--hue) 32% 25% / .65);
@@ -117,7 +117,11 @@
  /* =========================================
     Reusable Styles
  ========================================= */
- 
+ .javi-container{
+   max-width: 1170px;
+   margin-left: auto;
+   margin-right: auto;
+ }
  /* =========================================
     Components
  ========================================= */
@@ -133,7 +137,41 @@
  /* =========================================
     Header
  ========================================= */
- 
+ .javi-header{
+   z-index: var(--z-fixed);
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   padding: 30px 0;
+   transition: .3 ease;
+ }
+
+ .javi-header .inner{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .javi-logo a{
+   color: var(--color-01);
+   font-size: 2.6rem;
+   font-weight: var(--font-semi-bold);
+   letter-spacing: -1px;
+   transition: .3s;
+ }
+
+ .javi-logo a:hover{
+   color: var(--hover-color);
+ }
+
+ .header-btns {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   column-gap: 25px;
+ }
  /* ========== Dark/Light theme buttons ========== */
  
  /* =========================================
