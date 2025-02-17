@@ -36,7 +36,7 @@
  
     /* ======= Background colors ======= */
     --bottom-nav-bg: hsl( var(--hue) 32% 25% / .65);
-    --card-bg: linear-gradient(120deg, hsl( var(--hue) 54% 74% / .5), hsl( var(--hue) 54% 74% / .5));
+    --card-bg: linear-gradient(120deg, hsl( var(--hue) 54% 74% / .15), hsl( var(--hue) 54% 74% / .05));
     --modal-backdrop-bg: hsl( var(--hue) 54% 74% / .1);
     --footer-bg: linear-gradient(360deg, hsl( var(--hue) 54% 74% / .5), hsl( var(--hue) 54% 74% / .1));
  
@@ -128,10 +128,43 @@
    margin-right: auto;
  }
 
+ .javi-sub-container{
+  padding-top: 7em;
+  padding-bottom: 5em;
+ }
+
  .javi-wrapper{
   position: relative;
   width: 100%;
   height: 100%;
+ }
+
+ .section-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5%;
+ }
+
+ .section-title h3{
+  color: var(--color-01);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 10px;
+ }
+
+ .section-title p{
+  color: var(--color-04);
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+ }
+
+ .section-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 75px;
  }
  /* =========================================
     Components
@@ -570,7 +603,7 @@
   transform: rotate(180deg);
   margin-top: 7px;
   position: relative;
-  left: -2.6px;
+  left: -2.2px;
 
  }
 
@@ -582,16 +615,187 @@
 
  .arrow-icon{
   position: relative;
-  left: -2.6px;
+  left: -2.2px;
  }
  /* =========================================
     About Me
  ========================================= */
+ .about-img{
+  position: relative;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+ }
+
+ .about-img img{
+  width: 100%;
+  border: 15px;
+ }
+
+ .about-details{
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
+
+ .about-info .iam{
+  color: var(--color-02);
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 5%;
+ }
+
+ .about-description{
+  font-size: var(--base-font-size);
+  font-weight: var(--font-regular);
+  line-height: 20px;
+ }
+
+ .pro-list{
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  column-gap: 10px;
+  row-gap: 12px;
+  margin: 38px 0;
+ }
  
+ .pro-card{
+  background: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 15px 25px;
+  text-align: left;
+  border-radius: 5px;
+ }
+
+ .pro-card span{
+  color: var(--primary-color);
+  font-size: 2.75rem;
+  font-weight: var(--font-bold);
+ }
+
+ .pro-card p{
+  color: var(--color-02);
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-regular);
+  line-height: 20px;
+  max-width: 100px;
+ }
+
+ .about-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 25px;
+ }
  /* =========================================
     My Resume
  ========================================= */
- 
+ .resume-tabs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-bottom: 100px;
+ }
+
+ .resume-tabs .tab-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  color: var(--color-01);
+  font-size: var(--medium-font-size);
+  font-weight: var(--font-medium);
+  padding: 12px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: .3s;
+ }
+
+ .resume-tabs .tab-btn:hover{
+  color: var(--hover-color);
+ }
+
+ .resume-tabs .tab-btn i{
+  font-size: var(--xlarge-font-size);
+  margin-right: 3px;
+ }
+
+ .resume-tabs .tab-btn.active{
+  color: var(--dark-color);
+  background: var(--primary-color);
+  padding: 12px 15px;
+ }
+
+ .resume-tabs .tab-btn.tab-btn.active:hover{
+  color: var(--white-color);
+  background: var(--hover-color);
+ }
+
+ .resume-tab-content{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 25px;
+ }
+
+ .education .resume-line{
+  background: var(--primary-color);
+  width: 2px;
+  height: 200px;
+ }
+
+ .resume-items{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 67px;
+ }
+
+ .resume-items .item{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .resume-items .item:before{
+  content: "";
+  position: absolute;
+  background: var(--primary-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+ }
+
+ .resume-items .item .info{
+  position: absolute;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+ }
+
+ .resume-items .item-left .info{
+  right: 35px;
+ }
+
+ .resume-items .item-right .info{
+  left: 50px;
+ }
  /* =========================================
     Services
  ========================================= */
