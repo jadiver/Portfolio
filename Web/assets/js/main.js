@@ -69,13 +69,91 @@ serviceCardWithModals.forEach((serviceCardWithModal) => {
 ===================================================== */
 
 // Filter portfolio cards according to portfolio tabs.
+document.addEventListener("DOMContentLoaded", () => {
+   const portfolioTabs = document.querySelector(".portfolio-tabs");
+   const portfolioTabBtns = portfolioTabs.querySelectorAll(".tab-btn");
+   const cardWithModals = document.querySelectorAll(".portfolio-container .card-with-modal");
+
+   portfolioTabBtns.forEach((tabBtn) => {
+      tabBtn.addEventListener("click", () => {
+         const filter = tabBtn.getAttribute("data-filter");
+
+         cardWithModals.forEach((cardWithModal) => {
+            if(filter === "all" || cardWithModal.classList.contains(filter)){
+               cardWithModal.classList.remove("hidden");
+
+               setTimeout(() => {
+                  cardWithModal.style.opacity = "1";
+                  cardWithModal.style.transition = ".5s ease";
+               }, 1);
+
+            }else{
+               cardWithModal.classList.add("hidden");
+
+               setTimeout(() => {
+                  cardWithModal.style.opacity = "0";
+                  cardWithModal.style.transition = ".5s ease";
+               }, 1);
+            }
+         });
+         // Add active class to the clicked tab button.
+         portfolioTabBtns.forEach((tabBtn) => tabBtn.classList.remove("active"));
+         tabBtn.classList.add("active");
+      });
+   });
+});
 
 // Open/Close Portfolio modals.
+const portfolioCardsWithModals = document.querySelectorAll(".portfolio-container .card-with-modal");
+
+portfolioCardsWithModals.forEach((portfolioCardsWithModal) => {
+   const portfolioCard = portfolioCardsWithModal.querySelector(".portfolio-card");
+   const portfolioBackdrop = portfolioCardsWithModal.querySelector(".portfolio-modal-backdrop");
+   const portfolioModal = portfolioCardsWithModal.querySelector(".portfolio-modal");
+   const modalCloseBtn = portfolioCardsWithModal.querySelector(".modal-close-btn");
+
+   portfolioCard.addEventListener("click", () => {
+      portfolioBackdrop.style.display = "flex";
+
+      setTimeout(() => {
+         portfolioBackdrop.classList.add("active");
+      }, 100);
+      
+      setTimeout(() => {
+         portfolioModal.classList.add("active");
+      }, 100);
+
+      modalCloseBtn.addEventListener("click", () =>{
+
+         
+         setTimeout(() => {
+            portfolioBackdrop.style.display = "none";
+         }, 500);
+         
+         setTimeout(() => {
+            portfolioBackdrop.classList.remove("active");
+            portfolioModal.classList.remove("active");
+         }, 100);
+      });
+   });
+});
 
 /* =====================================================
    Testimonial Swiper
 ===================================================== */
-
+var swiper = new Swiper(".javi-client-swiper", {
+   slidesPerView: 1,
+   spaceBetween: 30,
+   loop: true,
+   pagination: {
+     el: ".swiper-pagination",
+     clickable: true,
+   },
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+ });
 /* =====================================================
    Send/Receive emails from contact form - EmailJS
 ===================================================== */
