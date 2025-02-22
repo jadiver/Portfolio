@@ -157,7 +157,34 @@ var swiper = new Swiper(".javi-client-swiper", {
 /* =====================================================
    Send/Receive emails from contact form - EmailJS
 ===================================================== */
+(function() {
+   // https://dashboard.emailjs.com/admin/account
+   emailjs.init({
+     publicKey: "PFcDMppPR88l5dy-t",
+   });
+})();
 
+javiContactForm = document.getElementById("javi-contact-form");
+javiContactFormAlert = document.querySelector(".contact-form-alert");
+
+javiContactForm.addEventListener('submit', function(event) {
+   event.preventDefault();
+   // these IDs from the previous steps
+   emailjs.sendForm('service_bugw8hh', 'template_ftqp524', '#javi-contact-form')
+       .then(() => {
+           //console.log('SUCCESS!');
+           javiContactFormAlert.innerHTML = "<span>¡Tu mensaje se ha enviado!</span><i class='ri-checkbox-circle-fill'></i>";
+           javiContactForm.reset();
+
+           setTimeout(() => {
+            javiContactFormAlert.innerHTML = "";
+           }, 5000);
+       }, (error) => {
+           //console.log('FAILED...', error);
+           javiContactFormAlert.innerHTML = "<span>Mensaje no enviado</span><i class='ri-error-warning-fill'></i>";
+           javiContactFormAlert.title = error;
+       });
+});
 /* =====================================================
    Shrink the height of the header on scroll
 ===================================================== */
