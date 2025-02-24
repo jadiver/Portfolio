@@ -227,6 +227,11 @@
    transition: .3 ease;
  }
 
+ .javi-header.shrink{
+  background: var(--body-color);
+  padding: 12px 0;
+ }
+
  .javi-header .inner{
    width: 100%;
    display: flex;
@@ -300,7 +305,18 @@
    position: fixed;
    left: 50%;
    transform: translateX(-50%);
-   bottom: 50px;
+   /* bottom: 50px; */
+   bottom: -75px;
+   opacity: 0;
+   transition: .5s ease, .3s ease;
+   transition-property: bottom, opacity;
+ }
+
+ .bottom-nav.active{
+  bottom: 50px;
+  opacity: 1;
+  transition: .5s ease, .3s ease;
+  transition-property: bottom, opacity;
  }
 
  .bottom-nav-inner{
@@ -390,6 +406,11 @@
    transition: .3s ease;
    pointer-events: none;
    opacity: 0;
+ }
+
+ .menu-hide-btn.active{
+  pointer-events: all;
+  opacity: 1;
  }
 
  .bottom-nav .menu-hide-btn:hover{

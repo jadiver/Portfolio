@@ -188,16 +188,72 @@ javiContactForm.addEventListener('submit', function(event) {
 /* =====================================================
    Shrink the height of the header on scroll
 ===================================================== */
+window.addEventListener("scroll", () => {
+   const javiHeader = document.querySelector(".javi-header");
 
+   javiHeader.classList.toggle("shrink", window.scrollY > 0);
+});
 /* =====================================================
    Bottom navigation menu
 ===================================================== */
 
 // Each bottom navigation menu items active on page scroll.
+window.addEventListener("scroll", () => {
+   const navMenuSections = document.querySelectorAll(".nav-menu-section");
+   const scrollY = window.pageYOffset;
+
+   navMenuSections.forEach((navMenuSection) => {
+      let sectionHeight = navMenuSection.offsetHeight;
+      let sectionTop = navMenuSection.offsetTop - 50;
+      let id = navMenuSection.getAttribute("id");
+
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+         document.querySelector(".bottom-nav .menu li a[href*=" + id + "]").classList.add("current");
+      }else{
+         document.querySelector(".bottom-nav .menu li a[href*=" + id + "]").classList.remove("current");
+      }
+   });
+});
 
 // Javascript to show bottom navigation menu on home(page load).
+window.addEventListener("DOMContentLoaded", () => {
+   const bottomNav = document.querySelector(".bottom-nav");
+
+   bottomNav.classList.toggle("active", window.scrollY < 10);
+
+})
 
 // Javascript to show/hide bottom navigation menu on home(scroll).
+const bottomNav = document.querySelector(".bottom-nav");
+const menuHideBtn = document.querySelector(".menu-hide-btn");
+const menuShowBtn = document.querySelector(".menu-show-btn");
+var navTimeout;
+
+window.addEventListener("scroll", () => {
+   bottomNav.classList.add("active");
+   
+   if(window.scrollY < 10){
+      menuHideBtn.classList.remove("active");
+
+      function scrollStoped(){
+         bottomNav.classList.add("active");
+      }
+
+      clearTimeout(navTimeout);
+      navTimeout = setTimeout(scrollStoped, 2500);
+   }
+
+   if(window.scrollY > 10){
+      menuHideBtn.classList.add("active");
+
+      function scrollStoped(){
+         bottomNav.classList.remove("active");
+      }
+
+      clearTimeout(navTimeout);
+      navTimeout = setTimeout(scrollStoped, 2500);
+   }
+});
 
 // Hide bottom navigation menu on click menu-hide-btn.
 
