@@ -231,6 +231,7 @@ var navTimeout;
 
 window.addEventListener("scroll", () => {
    bottomNav.classList.add("active");
+   menuShowBtn.classList.remove("active");
    
    if(window.scrollY < 10){
       menuHideBtn.classList.remove("active");
@@ -248,6 +249,7 @@ window.addEventListener("scroll", () => {
 
       function scrollStoped(){
          bottomNav.classList.remove("active");
+         menuShowBtn.classList.add("active");
       }
 
       clearTimeout(navTimeout);
@@ -256,16 +258,53 @@ window.addEventListener("scroll", () => {
 });
 
 // Hide bottom navigation menu on click menu-hide-btn.
+menuHideBtn.addEventListener("click", () => {
+   bottomNav.classList.toggle("active");
+   menuHideBtn.classList.toggle("active");
+   menuShowBtn.classList.toggle("active");
+});
 
 // Show bottom navigation menu on click menu-show-btn.
+menuShowBtn.addEventListener("click", () => {
+   bottomNav.classList.toggle("active");
+   menuHideBtn.classList.add("active");
+   menuShowBtn.classList.toggle("active");
+});
 
 /* =====================================================
    To-top-button with scroll indicator bar
 ===================================================== */
+window.addEventListener("scroll", () => {
+   const toTopBtn = document.querySelector(".to-top-btn");
 
+   toTopBtn.classList.toggle("active", window.scrollY > 0);
+
+   //Scroll indicator bar
+   const scrollIndicatorBar = document.querySelector(".scroll-indicator-bar");
+
+   const pageScroll = document.body.scrollTop || document.documentElement.scrollTop;
+   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+   const scrollValue = (pageScroll / height) * 100;
+
+   scrollIndicatorBar.style.height = scrollValue + "%";
+});
 /* =====================================================
    Customized cursor on mousemove
 ===================================================== */
+const cursor = document.querySelector(".cursor");
+const cursorDot = cursor.querySelector(".cursor-dot");
+const cursorCircle = cursor.querySelector(".cursor-circle");
+
+document.addEventListener("mouseover", (e) => {
+   let x = e.clientX;
+   let y = e.clientY;
+
+   cursorDot.style.top = y + "px";
+   cursorDot.style.left = x + "px";
+   cursorCircle.style.top = y + "px";
+   cursorCircle.style.left = x + "px";
+})
 
 // Cursor effects on hover website elements.
 
