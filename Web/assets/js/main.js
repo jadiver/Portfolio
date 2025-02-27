@@ -292,34 +292,34 @@ window.addEventListener("scroll", () => {
 /* =====================================================
    Customized cursor on mousemove
 ===================================================== */
-// const cursor = document.querySelector(".cursor");
-// const cursorDot = cursor.querySelector(".cursor-dot");
-// const cursorCircle = cursor.querySelector(".cursor-circle");
+const cursor = document.querySelector(".cursor");
+const cursorDot = cursor.querySelector(".cursor-dot");
+const cursorCircle = cursor.querySelector(".cursor-circle");
 
-// document.addEventListener("mousemove", (e) => {
-//    let x = e.clientX;
-//    let y = e.clientY;
+document.addEventListener("mousemove", (e) => {
+   let x = e.clientX;
+   let y = e.clientY;
 
-//    cursorDot.style.top = cursorCircle.style.top = y + "px";
-//    cursorDot.style.left = cursorCircle.style.left = x + "px";
-// })
+   cursorDot.style.top = cursorCircle.style.top = y + "px";
+   cursorDot.style.left = cursorCircle.style.left = x + "px";
+})
 
-// // Cursor effects on hover website elements.
-// const cursorHoverlinks = document.querySelectorAll("body a, .theme-btn, .sue-main-btn, portfolio-card, .swipper-button-next, swipper-button-prev, .swipper-pagination-bullet, .service-card, .contact-social-links li, .contact-form .submit-btn, .menu-show-btn, .menu-hide-btn")
+// Cursor effects on hover website elements.
+const cursorHoverlinks = document.querySelectorAll("body a, .theme-btn, .sue-main-btn, portfolio-card, .swipper-button-next, swipper-button-prev, .swipper-pagination-bullet, .service-card, .contact-social-links li, .contact-form .submit-btn, .menu-show-btn, .menu-hide-btn")
 
-// cursorHoverlinks.forEach((cursorHoverlink) => {
-//    cursorHoverlink.addEventListener("mouseover", () => {
-//       cursorDot.classList.add("large");
-//       cursorCircle.style.display = "none";
-//    });
-// });
+cursorHoverlinks.forEach((cursorHoverlink) => {
+   cursorHoverlink.addEventListener("mouseover", () => {
+      cursorDot.classList.add("large");
+      cursorCircle.style.display = "none";
+   });
+});
 
-// cursorHoverlinks.forEach((cursorHoverlink) => {
-//    cursorHoverlink.addEventListener("mouseout", () => {
-//       cursorDot.classList.remove("large");
-//       cursorCircle.style.display = "block";
-//    });
-// });
+cursorHoverlinks.forEach((cursorHoverlink) => {
+   cursorHoverlink.addEventListener("mouseout", () => {
+      cursorDot.classList.remove("large");
+      cursorCircle.style.display = "block";
+   });
+ });
 
 /* =====================================================
    Website dark/light theme
