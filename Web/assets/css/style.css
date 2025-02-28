@@ -15,10 +15,12 @@
     /* Green - hsl(162, 60%, 65%); */
     /* Red - hsl(356, 67%, 70%); */
     /* Pink - hsl(330, 73%, 72%); */
+
+    /* Final colors: hsl(65, 60%, 70%); hsl(180, 40%, 20%);  */
  
-    --hue: 217;
-    --sat: 85%;
-    --light: 74%;
+    --hue: 65;
+    --sat: 60%;
+    --light: 70%;
  
     --primary-color: hsl( var(--hue) var(--sat) var(--light)); /* primary */
     --white-color: hsl( var(--hue) 45% 98%); /* white */
@@ -28,10 +30,10 @@
     --color-01: hsl( var(--hue) var(--sat) var(--light)); /* primary to dark */
     --color-02: hsl( var(--hue) 45% 98%); /* white to dark */
     --color-03: hsl( var(--hue) 26% 12%); /* dark to white */
-    --color-04: hsl( var(--hue) 0% 62%); /* light-graygray to dark-gray */
+    --color-04: hsl(184, 61%, 85%); /* light-graygray to dark-gray */
     --color-05: hsl( var(--hue) 26% 12%); /* dark to primary */
  
-    --body-color: hsl( 250 26% 12%); /* dark to white */
+    --body-color: hsl(180, 40%, 20%); /* dark to white */
     --hover-color: hsl( var(--hue) var(--sat) calc(var(--light) - 9.5%));
  
     /* ======= Background colors ======= */
@@ -596,7 +598,7 @@
   transition-property: bottom, opacity;
  }
 
- /* @keyframes wiggle {
+ @keyframes wiggle {
   0%,
   5%{
     transform: rotateZ(0);
@@ -619,7 +621,7 @@
   40%{
     transform: rotateZ(0deg);
   }
- } */
+ }
 
  .menu-show-btn .bar-01,
  .menu-show-btn .bar-02{
@@ -751,7 +753,7 @@
   animation-delay: 1.85s;
  }
 
- /* @keyframes up-down{
+ @keyframes up-down{
   0%{
     transform: translateY(8px);
   }
@@ -761,7 +763,7 @@
   100%{
     transform: translateY(8px);
   }
- } */
+ }
 
  .home-scroll-btn:hover{
   color: var(--hover-color);
@@ -1784,10 +1786,6 @@
     Media Queries (max-width: 1600px)
  ========================================= */
  @media screen and (max-width: 1600px){
-  .cursor{
-    display: none;
-  }
-
   .javi-container{
     max-width: 1075px;
   }
@@ -1808,6 +1806,10 @@
     Media Queries (max-width: 1200px)
  ========================================= */
  @media screen and (max-width: 1200px){
+  .cursor{
+    display: none;
+  }
+
   .javi-container{
     max-width: 100%;
     margin-left: 50px;
@@ -2212,5 +2214,66 @@
   .skill-categories{
     column-gap: 35px;
     padding: 0 25px;
+  }
+
+  .service-container{
+    width: 100%;
+  }
+
+  .card-with-modal{
+    width: 100%;
+  }
+
+  .service-card{
+    margin: 0 auto;
+  }
+
+  .service-modal{
+    padding: 50px 15px;
+    margin: 75px 20px;
+  }
+
+  .portfolio-container{
+    row-gap: 25px;
+    width: 100%;
+  }
+
+  .portfolio-card{
+    width: 100%;
+  }
+
+  .portfolio-modal{
+    padding: 65px 20px;
+  }
+
+  .contact-details{
+    row-gap: 35px;
+  }
+
+  .contact-social-links{
+    column-gap: 20px;
+  }
+
+  .contact-social-links li{
+    font-size: 1.65rem;
+    width: 75px;
+    height: 75px;
+  }
+
+  .contact-form-body{
+    padding: 35px 20px;
+  }
+
+  .contact-form-body h2{
+    text-align: center;
+  }
+
+  .contact-form-body .input-group{
+    display: grid;
+    place-items: center;
+  }
+
+  .to-top-btn{
+    display: none;
   }
  }

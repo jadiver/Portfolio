@@ -354,6 +354,21 @@ document.addEventListener("DOMContentLoaded", () => {
 ===================================================== */
 
 // Common reveal options to create reveal animations.
+ScrollReveal({ 
+   // reset: true,
+   distance: '60px',
+   duration: 2500,
+   delay: 400
+});
 
 // Target elements and specify options to create reveal animations.
-      
+ScrollReveal().reveal('.avatar-img', { delay: 50, origin: 'top' });
+ScrollReveal().reveal('.avatar-info, .section-title', { delay: 150, origin: 'top' });
+ScrollReveal().reveal('.home-social, .home-scroll-btn, .copy-right', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal('.about-img', { delay: 300, origin: 'top' });
+ScrollReveal().reveal('.about-info, .javi-footer .javi-logo', { delay: 150, origin: 'bottom' });
+ScrollReveal().reveal('.pro-card, .about-buttons, .sue-main-btn, .resume-tabs, .tab-btn, .portfolio-tabs, .tab-btn', { delay: 200, origin: 'right', interval: 200 });
+ScrollReveal().reveal('#resume .section-content', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal('.service-card, .portfolio-card, .contact-item, .contact-social-links li, .footer-menu, .menu-item', { delay: 150, origin: 'bottom', interval: 300 });
+ScrollReveal().reveal('.javi-client-swiper, .contact-form-container', { delay: 400, origin: 'right' });
+ScrollReveal().reveal('.contact-info h3', { delay: 100, origin: 'bottom', interval: 150 });
