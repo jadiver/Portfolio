@@ -92,10 +92,10 @@
     --color-04: hsl( var(--hue) 9% 46%); /* light-graygray to dark-gray */
     --color-05: hsl( var(--hue) var(--sat) var(--light)); /* dark to primary */
  
-    --body-color: hsl( var(--hue) 45% 98%); /* dark to white */
+    --body-color: hsl( var(--hue) 45% 88%); /* dark to white */
  
     /* ======= Background colors ======= */
-    --bottom-nav-bg: hsl( var(--hue) 32% 25% / .8);
+    --bottom-nav-bg: hsl( var(--hue) 32% 42% / .8);
     --card-bg: hsl(0 0% 100%);
     --modal-backdrop-bg: hsl( var(--hue) 50% 12% / .5);
     --footer-bg: linear-gradient(360deg, hsl( var(--hue) var(--sat) var(--light)), hsl(var(--hue) var(--sat) var(--light)/ .75));
@@ -116,9 +116,23 @@
       box-shadow: 0 2px 8px hsl(0, 0%, 1%, .05);
     }
 
+    .border-btn{
+      background-color: hsl(0 0% 100% / .7);
+    }
+
     .contact-form,
     .contact-social-links li{
       box-shadow: 0 2px 8px hsl(0, 0%, 1%, .05);
+    }
+
+    .contact-form-container form .input-group input,
+    .contact-form-container form .input-group textarea{
+      background:hsl(var(--hue) 54% 74% / .3);
+    }
+
+    .contact-form-container form .input-group input::placeholder,
+    .contact-form-container form .input-group textarea::placeholder{
+      color: var(--bottom-nav-bg);
     }
 
     .javi-footer .copy-right{
@@ -338,6 +352,7 @@
 
  .border-btn{
    border: 2px solid var(--color-01);
+   background: hsl( var(--hue) 54% 99% / .13);
  }
 
  .fill-btn{
@@ -673,7 +688,6 @@
   position: absolute;
   left: 0;
   top: 35%;
-
  }
 
  .home-social span{
@@ -1400,6 +1414,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow-y: auto;
   display: none;
   opacity: 0;
@@ -1556,6 +1571,25 @@
  /* =========================================
     Contact Me
  ========================================= */
+ .oculto1,
+ .oculto2{
+  display: none;
+}
+
+#mostrar-button-one,
+#ocultar-button-one,
+#mostrar-button-two,
+#ocultar-button-two{
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: .3s;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+
  .contact-container{
   position: relative;
   display: flex;
@@ -1610,12 +1644,14 @@
 
  .contact-method h4{
   color: var(--color-02);
-  font-size: var(--base-font-size);
-  font-weight: var(--medium-font-size);
+  font-size: var(--tiny-font-size);
+  font-weight: lighter;
  }
 
  .contact-method a{
   color: var(--primary-color);
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-light);
   transition: .3s;
  }
 
@@ -1706,6 +1742,12 @@
   height: 185px;
   resize: none;
  }
+
+ 
+ .contact-form-container form .input-group input::placeholder,
+ .contact-form-container form .input-group textarea::placeholder{
+  color: hsl(var(--hue) var(--sat) var(--light)/ .6);
+}
 
  .contact-form-container form .send-message{
   display: flex;
@@ -1816,6 +1858,10 @@
     margin-right: 50px;
   }
 
+  .home-social{
+    top: 42%;
+  }
+
   .section-content{
     flex-direction: column;
     column-gap: 0;
@@ -1855,7 +1901,7 @@
   }
 
   .portfolio-modal{
-    max-width: 60%;
+    max-width: 80%;
   }
   
  }
@@ -1926,6 +1972,7 @@
     justify-content: center;
   }
  }
+ 
  /* =========================================
     Media Queries (max-width: 768px)
  ========================================= */
@@ -1977,6 +2024,10 @@
 
   .bottom-nav .menu li a i{
     font-size: 1.25rem;
+  }
+
+  .avatar-info{
+    top: 12%;
   }
 
   .home-social .social-line{
@@ -2244,6 +2295,7 @@
 
   .portfolio-modal{
     padding: 65px 20px;
+    max-width: 80%;
   }
 
   .contact-details{

@@ -364,11 +364,15 @@ ScrollReveal({
 // Target elements and specify options to create reveal animations.
 ScrollReveal().reveal('.avatar-img', { delay: 50, origin: 'top' });
 ScrollReveal().reveal('.avatar-info, .section-title', { delay: 150, origin: 'top' });
-ScrollReveal().reveal('.home-social, .home-scroll-btn, .copy-right', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal('.home-social, .home-scroll-btn, .copy-right, .service-card', { delay: 300, origin: 'bottom' });
 ScrollReveal().reveal('.about-img', { delay: 300, origin: 'top' });
 ScrollReveal().reveal('.about-info, .javi-footer .javi-logo', { delay: 150, origin: 'bottom' });
 ScrollReveal().reveal('.pro-card, .about-buttons, .sue-main-btn, .resume-tabs, .tab-btn, .portfolio-tabs, .tab-btn', { delay: 200, origin: 'right', interval: 200 });
 ScrollReveal().reveal('#resume .section-content', { delay: 300, origin: 'bottom' });
-ScrollReveal().reveal('.service-card, .portfolio-card, .contact-item, .contact-social-links li, .footer-menu, .menu-item', { delay: 150, origin: 'bottom', interval: 300 });
+ScrollReveal().reveal(' .portfolio-card, .contact-item, .contact-social-links li, .footer-menu ', { delay: 150, origin: 'bottom', interval: 300 });
 ScrollReveal().reveal('.javi-client-swiper, .contact-form-container', { delay: 400, origin: 'right' });
 ScrollReveal().reveal('.contact-info h3', { delay: 100, origin: 'bottom', interval: 150 });
+
+//Hiden elements
+
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('a x(){4 k=6.s(\'.w\');4 i=6.c(\'r-b-t\');4 h=6.c(\'q-b-t\');4 j=o.n(k).m(2=>2.1.0===\'3\'||2.1.0===\'\');k.l(a(2){9(j){2.1.0=\'5\'}8{2.1.0=\'3\'}});9(j){i.1.0=\'3\';h.1.0=\'7-5\'}8{i.1.0=\'7-5\';h.1.0=\'3\'}}a v(){4 g=6.s(\'.u\');4 e=6.c(\'r-b-p\');4 d=6.c(\'q-b-p\');4 f=o.n(g).m(2=>2.1.0===\'3\'||2.1.0===\'\');g.l(a(2){9(f){2.1.0=\'5\'}8{2.1.0=\'3\'}});9(f){e.1.0=\'3\';d.1.0=\'7-5\'}8{e.1.0=\'7-5\';d.1.0=\'3\'}}',34,34,'display|style|caja|none|var|block|document|inline|else|if|function|button|getElementById|ocultarButton|mostrarButton|algunoOculto|cajas|ocultarButton1|mostrarButton1|algunoOculto1|cajas1|forEach|some|from|Array|two|ocultar|mostrar|querySelectorAll|one|caja2|toggleCajas2|caja1|toggleCajas1'.split('|'),0,{}))

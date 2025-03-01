@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Portolio de Javier Diaz Vergara</title>
   
   <!--========== Swiper CSS ==========-->
@@ -118,7 +119,7 @@
       </div>
       <div class="section-content">
         <div class="about-img">
-          <img src="assets/images/mountain-gorilla-baby_586f20fe_480x480.jpg" alt="">
+          <img src="assets/images/freepik__background__1981.png" alt="">
         </div>
         <div class="about-details">
           <div class="about-info">
@@ -766,8 +767,15 @@
                   </div>
                   <div class="contact-method">
                     <span>E-mail</span>
-                      <h4>javierdv180@gmail.com</h4>
-                      <a href="mailto:someone@example.com" target="_blank"><span>Enviar <i class="ri-arrow-right-up-line"></i></span></a>
+
+                      <div class="caja1 oculto1">
+                        <div>
+                          <h4>javierdv180@gmail.com</h4>
+                          <a href="mailto:someone@example.com" target="_blank"><span>Enviar <i class="ri-arrow-right-up-line"></i></span></a>
+                        </div>
+                      </div>
+                            <button id="mostrar-button-one" onclick="toggleCajas1()">Ver E-mail</button>
+                            <button id="ocultar-button-one" onclick="toggleCajas1()" style="display: none;">Ocultar</button>
                   </div>
                 </li>
 
@@ -776,9 +784,16 @@
                     <i class="ri-whatsapp-line"></i>
                   </div>
                   <div class="contact-method">
+                    
                     <span>Whatsapp</span>
-                      <h4>+34 657 492 577</h4>
-                      <a href="https://wa.me/+34657492577?text=Hola!%20como%20puedo%20ayudarte?" target="_blank"><span>Enviar <i class="ri-arrow-right-up-line"></i></span></a>
+                      <div class="caja2 oculto2">
+                        <div>
+                          <h4>+34 657 492 577</h4>
+                          <a href="https://wa.me/+34657492577?text=Hola!%20como%20puedo%20ayudarte?" target="_blank"><span>Enviar <i class="ri-arrow-right-up-line"></i></span></a>
+                        </div>
+                      </div>
+                      <button id="mostrar-button-two" onclick="toggleCajas2()">Ver E-mail</button>
+                      <button id="ocultar-button-two" onclick="toggleCajas2()" style="display: none;">Ocultar</button>
                   </div>
                 </li>
 
