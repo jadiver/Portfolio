@@ -59,7 +59,7 @@
     --xlarge-font-size: 1.48rem;
     --large-font-size: 1.23rem;
     --medium-font-size: 1.18rem;
-    --base-font-size: 1.1rem;
+    --base-font-size: 1rem;
     --small-font-size: 1.07rem;
     --tiny-font-size: .98rem;
     
@@ -681,7 +681,7 @@
 
  .avatar-img img{
   position: absolute;
-  width: 100%;
+  width: 80%;
  }
 
  .home-social{
@@ -887,6 +887,16 @@
  /* =========================================
     My Resume
  ========================================= */
+ .javi-section-resume{
+  position: relative;
+  overflow: visible;
+ }
+
+ .javi-sub-container-resume{
+  padding-top: 7em;
+  padding-bottom: 5em;
+ }
+ 
  .resume-tabs{
   display: flex;
   justify-content: center;
@@ -947,10 +957,14 @@
   opacity: 1;
  }
 
+ .resume-tab-content.experience.active {
+  margin-bottom: 15%;
+}
+
  .education .resume-line{
   background: var(--primary-color);
   width: 2px;
-  height: 200px;
+  height: 330px;
  }
 
  .resume-items{
@@ -1026,7 +1040,7 @@
   .experience .resume-line{
     background: var(--primary-color);
     width: 2px;
-    height: 130px;
+    height: 270px;
   }
 
   .education, .experience{
@@ -1110,7 +1124,7 @@
  /* =========================================
     Services
  ========================================= */
- .service-container{
+  .service-container{
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, 1fr);
@@ -1862,6 +1876,10 @@
     top: 42%;
   }
 
+  .avatar-img{
+    justify-content: center;
+  }
+
   .section-content{
     flex-direction: column;
     column-gap: 0;
@@ -1920,10 +1938,6 @@
 
   .avatar-container .hire-btn-02{
     display: none;
-  }
-
-  .avatar-img{
-    width: 350px;
   }
 
   .avatar-info .text-content{
@@ -2035,6 +2049,10 @@
     margin-bottom: 20px;
   }
 
+  .resume-tab-content.experience.active {
+    margin-bottom: 30%;
+  }
+
   .resume-items .item .info{
     width: 185px;
     column-gap: 15px;
@@ -2134,6 +2152,10 @@
 
   .javi-header{
     padding: 20px 0;
+  }
+
+  .avatar-img{
+    width: 78%;
   }
 
   .header-btns{
