@@ -1160,7 +1160,12 @@
   white-space: nowrap;
   max-width: 150px;
   margin-top: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 8px;
+ }
+
+ .service-info p{
+  margin-bottom: 4px;
+  font-size: smaller;
  }
 
  .service-see-more{
