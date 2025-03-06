@@ -1418,6 +1418,19 @@
   transition: .3s;
  }
 
+ .card-inside {
+  display: flex;
+  color: var(--color-01);
+  font-size: 1.1rem;
+  font-family: var(--body-font-family);
+ }
+
+ .card-inside p,
+ .card-inside a{
+  color: var(--color-01);
+  margin-right: 2px;
+ }
+
  .portfolio-card:hover .card-info i{
   transform: scale(1);
  }
@@ -1521,7 +1534,7 @@
  .swiper{
   width: 100%;
   max-width: 1050px;
-  height: 275px;
+  height: 400px;
  }
 
  .swiper-slide{
