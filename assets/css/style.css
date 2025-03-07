@@ -216,17 +216,28 @@
   margin-bottom: 5%;
  }
 
- .section-title h3{
+ .section-title h3,
+ .section-title-testimonial h3{
   color: var(--color-01);
   font-size: var(--h3-font-size);
   font-weight: var(--font-bold);
   margin-bottom: 10px;
  }
 
- .section-title p{
+ .section-title-testimonial{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: none;
+ }
+
+ .section-title p,
+ .section-title-testimonial p{
   color: var(--color-04);
   font-size: var(--base-font-size);
   font-weight: var(--font-regular);
+  text-align: center;
  }
 
  .section-content{
@@ -1528,7 +1539,8 @@
  .testimonials{
   position: relative;
   width: 100%;
-  margin-top: 12em;
+  margin-top: 10em;
+  margin-bottom: -85px;
  }
 
  .swiper{
@@ -1600,6 +1612,7 @@
  .swiper-pagination-bullet-active{
   background: var(--primary-color);
  }
+
  /* =========================================
     Contact Me
  ========================================= */
@@ -1771,7 +1784,7 @@
  }
 
  .contact-form-container form .input-group textarea{
-  height: 185px;
+  height: 130px;
   resize: none;
  }
 
@@ -1810,6 +1823,46 @@
   color: var(--primary-color);
   font-size: 1.25rem;
  }
+
+ /* Estilos específicos para el captcha */
+.captcha-container {
+  margin-top: 5px;
+}
+
+.captcha-container p{
+  margin-bottom: 5px;
+}
+
+.captcha {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.captcha-message {
+  font-size: 0.9rem;
+  color: red;
+  margin-top: 10px;
+}
+
+.captcha-equal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input#captcha-answer {
+  margin-bottom: 0;
+}
+
+.send-message {
+  text-align: center;
+}
+
+/* Mensaje de éxito o error */
+.contact-form-alert {
+  margin-top: 15px;
+}
  /* =========================================
     Footer
  ========================================= */
@@ -1939,6 +1992,10 @@
   .portfolio-modal{
     max-width: 80%;
   }
+
+  .section-title-testimonial{
+    margin-bottom: 20px;
+   }
   
  }
  /* =========================================
@@ -1972,7 +2029,7 @@
 
   .swiper{
     max-width: 700px;
-    height: 450px;
+    height: 500px;
   }
 
   .swiper-slide{

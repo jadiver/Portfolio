@@ -162,29 +162,57 @@ var swiper = new Swiper(".javi-client-swiper", {
    emailjs.init({
      publicKey: "PFcDMppPR88l5dy-t",
    });
-})();
-
-javiContactForm = document.getElementById("javi-contact-form");
-javiContactFormAlert = document.querySelector(".contact-form-alert");
-
-javiContactForm.addEventListener('submit', function(event) {
-   event.preventDefault();
-   // these IDs from the previous steps
+ })();
+ 
+ const javiContactForm = document.getElementById("javi-contact-form");
+ const javiContactFormAlert = document.querySelector(".contact-form-alert");
+ 
+ // Generar pregunta del captcha y respuesta correcta
+ function getRandomInt(min, max) {
+   return Math.floor(Math.random() * (max - min + 1)) + min;
+ }
+ 
+ function generateCaptcha() {
+   const num1 = getRandomInt(1, 10);
+   const num2 = getRandomInt(1, 10);
+   const operator = getRandomInt(0, 1) === 0 ? "+" : "-"; // Aleatorio entre + y -
+   const question = `${num1} ${operator} ${num2}`;
+   const correctAnswer = operator === "+" ? num1 + num2 : num1 - num2;
+ 
+   document.getElementById("captcha-question").textContent = question;
+   return correctAnswer;
+ }
+ 
+ let correctAnswer = generateCaptcha(); // Inicializamos el captcha
+ 
+ // Función para validar el captcha antes de enviar el formulario
+ javiContactForm.addEventListener('submit', function(event) {
+   event.preventDefault(); // Evitar el envío del formulario
+ 
+   const userAnswer = parseInt(document.getElementById("captcha-answer").value);
+   const captchaMessage = document.getElementById("captcha-message");
+ 
+   // Verificar si la respuesta del captcha es correcta
+   if (userAnswer !== correctAnswer) {
+     captchaMessage.textContent = "Incorrecto!";
+     return; // No continuar con el envío si la respuesta es incorrecta
+   } else {
+     captchaMessage.textContent = ""; // Limpiar mensaje si la respuesta es correcta
+   }
+ 
+   // Si la respuesta es correcta, entonces enviamos el formulario con EmailJS
    emailjs.sendForm('service_bugw8hh', 'template_ftqp524', '#javi-contact-form')
-       .then(() => {
-           //console.log('SUCCESS!');
-           javiContactFormAlert.innerHTML = "<span>¡Tu mensaje se ha enviado!</span><i class='ri-checkbox-circle-fill'></i>";
-           javiContactForm.reset();
-
-           setTimeout(() => {
-            javiContactFormAlert.innerHTML = "";
-           }, 5000);
-       }, (error) => {
-           //console.log('FAILED...', error);
-           javiContactFormAlert.innerHTML = "<span>Mensaje no enviado</span><i class='ri-error-warning-fill'></i>";
-           javiContactFormAlert.title = error;
-       });
-});
+     .then(() => {
+       javiContactFormAlert.innerHTML = "<span>¡Tu mensaje se ha enviado!</span><i class='ri-checkbox-circle-fill'></i>";
+       javiContactForm.reset();
+       setTimeout(() => {
+         javiContactFormAlert.innerHTML = "";
+       }, 5000);
+     }, (error) => {
+       javiContactFormAlert.innerHTML = "<span>Mensaje no enviado</span><i class='ri-error-warning-fill'></i>";
+       javiContactFormAlert.title = error;
+     });
+ });
 /* =====================================================
    Shrink the height of the header on scroll
 ===================================================== */
