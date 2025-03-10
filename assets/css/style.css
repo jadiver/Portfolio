@@ -1795,6 +1795,20 @@
   color: hsl(var(--hue) var(--sat) var(--light)/ .6);
 }
 
+#captcha-answer{
+  background: hsl(var(--hue) 54% 74% / .1);
+  font-size: var(--small-font-size);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: var(--color-02);
+}
+
+#captcha-answer::placeholder{
+  color: hsl(var(--hue) var(--sat) var(--light)/ .6);
+}
+
  .contact-form-container form .send-message{
   display: flex;
   justify-content: space-between;
@@ -1842,15 +1856,15 @@
 
 .captcha-message {
   font-size: 0.9rem;
-  color: red;
+  color: var(--hover-color);
   margin-top: 10px;
 }
 
-.captcha-equal{
+/* .captcha-equal{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 input#captcha-answer {
   margin-bottom: 0;
