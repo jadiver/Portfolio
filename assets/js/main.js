@@ -390,16 +390,16 @@ ScrollReveal({
 });
 
 // Target elements and specify options to create reveal animations.
-// ScrollReveal().reveal('.avatar-img', { delay: 50, origin: 'top' });
-// ScrollReveal().reveal('.avatar-info, .section-title', { delay: 150, origin: 'top' });
-// ScrollReveal().reveal('.home-social, .home-scroll-btn, .copy-right, .service-card', { delay: 200, origin: 'bottom' });
-// ScrollReveal().reveal('.about-img', { delay: 200, origin: 'top' });
-// ScrollReveal().reveal('.about-info, .javi-footer .javi-logo', { delay: 150, origin: 'bottom' });
-// ScrollReveal().reveal('.pro-card, .about-buttons, .sue-main-btn, .resume-tabs, .tab-btn, .portfolio-tabs, .tab-btn', { delay: 200, origin: 'right', interval: 100 });
-// ScrollReveal().reveal('#resume .section-content', { delay: 300, origin: 'bottom' });
-// ScrollReveal().reveal(' .portfolio-card, .contact-item, .contact-social-links li, .footer-menu ', { delay: 150, origin: 'bottom', interval: 200 });
-// ScrollReveal().reveal('.javi-client-swiper, .contact-form-container', { delay: 200, origin: 'right' });
-// ScrollReveal().reveal('.contact-info h3', { delay: 100, origin: 'bottom', interval: 150 });
+ScrollReveal().reveal('.avatar-img', { delay: 50, origin: 'top' });
+ScrollReveal().reveal('.avatar-info, .section-title', { delay: 150, origin: 'top' });
+ScrollReveal().reveal('.home-social, .home-scroll-btn, .copy-right, .service-card', { delay: 200, origin: 'bottom' });
+ScrollReveal().reveal('.about-img', { delay: 200, origin: 'top' });
+ScrollReveal().reveal('.about-info, .javi-footer .javi-logo', { delay: 150, origin: 'bottom' });
+ScrollReveal().reveal('.pro-card, .about-buttons, .javi-main-btn, .tab-btn, .portfolio-tabs, .tab-btn', { delay: 200, origin: 'right', interval: 100 });
+ScrollReveal().reveal('#resume .section-content', { delay: 300, origin: 'bottom' });
+ScrollReveal().reveal(' .portfolio-card, .contact-item, .contact-social-links li, .footer-menu ', { delay: 150, origin: 'bottom', interval: 200 });
+ScrollReveal().reveal('.javi-client-swiper, .contact-form-container', { delay: 200, origin: 'right' });
+ScrollReveal().reveal('.contact-info h3', { delay: 100, origin: 'bottom', interval: 150 });
 
 //Hiden elements
 
