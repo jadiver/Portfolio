@@ -862,6 +862,7 @@
   column-gap: 10px;
   row-gap: 12px;
   margin: 38px 0;
+  
  }
  
  .pro-card{
@@ -1979,6 +1980,11 @@ input#captcha-answer {
     justify-content: center;
   }
 
+  .pro-list{
+    display: flex;
+    justify-content: safe center;
+  }
+
   .skill-container{
     display: grid;
     place-items: normal;
@@ -2201,6 +2207,12 @@ input#captcha-answer {
     right: 20px;
   }
  }
+ @media screen and (max-width: 670px) {
+  .pro-list{
+    grid-template-columns: repeat(auto-fill, minmax(160px, 2fr));
+    display: grid;
+  }
+ }
  /* =========================================
     Media Queries (max-width: 480px)
  ========================================= */
@@ -2235,6 +2247,7 @@ input#captcha-answer {
 
   .header-btns{
     column-gap: 15px;
+
   }
 
   .home-container .javi-wrapper{
@@ -2304,10 +2317,6 @@ input#captcha-answer {
   .about-img{
     width: 100%;
     max-width: 375px;
-  }
-
-  .pro-list{
-    grid-template-columns: repeat(auto-fill, minmax(160px, 2fr));
   }
 
   .pro-card{
