@@ -33,7 +33,7 @@
     --color-04: hsl(184, 61%, 85%); /* light-graygray to dark-gray */
     --color-05: hsl( var(--hue) 26% 12%); /* dark to primary */
  
-    --body-color: hsl(180, 40%, 20%); /* dark to white */
+    --body-color: hsl(180, 40%, 30%); /* dark to white */
     --hover-color: hsl( var(--hue) var(--sat) calc(var(--light) - 9.5%));
  
     /* ======= Background colors ======= */
