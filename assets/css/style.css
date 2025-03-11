@@ -92,7 +92,7 @@
     --color-04: hsl( var(--hue) 9% 46%); /* light-graygray to dark-gray */
     --color-05: hsl( var(--hue) var(--sat) var(--light)); /* dark to primary */
  
-    --body-color: hsl( var(--hue) 10% 90%); /* dark to white */
+    --body-color: hsl( 60 5% 90%); /* dark to white */
  
     /* ======= Background colors ======= */
     --bottom-nav-bg: hsl( var(--hue) 32% 42% / .8);
